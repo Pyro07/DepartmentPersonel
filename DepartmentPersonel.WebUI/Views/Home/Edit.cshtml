@@ -1,0 +1,36 @@
+﻿@model DepartmentPersonel.Entities.Department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-3">Departman Adını Giriniz:</label>
+                        @Html.TextBoxFor(d => d.Name, new { @class = "form-control col-md-5" })
+                    </div>
+                    <div class="form-group row">
+                        <input type="submit" value="Kaydet" class="btn btn-info offset-md-3 col-md-5" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
