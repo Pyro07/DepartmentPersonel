@@ -1,49 +1,54 @@
 ﻿@model DepartmentPersonel.Entities.Personel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
+
     @using (Html.BeginForm("Create", "Personel", FormMethod.Post))
     {
+    <div class="shadow shadow-lg p-3 mb-5 bg-light rounded mt-4">
         <div class="container">
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-md-12">
-                    <div class="form-group row">
-                        <label class="col-form-label col-md-3">Departman</label>
-                        @Html.DropDownListFor(p => p.DepartmentId, new SelectList(ViewBag.PersonelDepartments, "Id", "Name"), "Departman Seçiniz", new { @class = "form-control col-md-5" })
-                        @Html.ValidationMessageFor(p => p.Department, "", new { @class = "text-danger" })
+                    <div class="form-group row mt-3">
+                        <label class="col-form-label col-sm-3 font-weight-bold">Departmanı</label>
+                        <div class="col-sm-9">
+                            @Html.DropDownListFor(p => p.DepartmentId, new SelectList(ViewBag.PersonelDepartments, "Id", "Name"), "Departman Seçiniz", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.Department, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-md-3">Ad</label>
-                        @Html.TextBoxFor(p => p.Name, new { @class = "form-control col-md-5" })
-                        @Html.ValidationMessageFor(p => p.Name, "", new { @class = "text-danger" })
+                        <label class="col-form-label col-md-3 font-weight-bold">Personel Adı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.Name, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-md-3">Soyad</label>
-                        @Html.TextBoxFor(p => p.LastName, new { @class = "form-control col-md-5" })
-                        @Html.ValidationMessageFor(p => p.LastName, "", new { @class = "text-danger" })
+                        <label class="col-form-label col-md-3 font-weight-bold">Personel Soyadı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.LastName, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
+                    @*<div class="form-group row">
+                        <label class="col-form-label col-md-3">Maaş</label>
+                        @Html.TextBoxFor(p => p.Salary, new { @class = "form-control col-md-5" })
+                        @Html.ValidationMessageFor(p=>p.Salary, "", new { @class = "text-danger" })
+                    </div>*@
                     <div class="form-group row">
-                        <input type="submit" value="Ekle" class="btn btn-info offset-md-3 col-md-5" />
+                        <div class="offset-sm-3 col-sm-9">
+                            <input type="submit" value="Personeli ekle" class="btn btn-info col-sm-3" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     }
     
-        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    </body>
-</html>
+

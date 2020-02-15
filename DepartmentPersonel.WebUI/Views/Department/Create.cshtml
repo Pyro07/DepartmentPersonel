@@ -1,0 +1,43 @@
+﻿@model DepartmentPersonel.Entities.Department
+@{
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "Department", FormMethod.Post))
+{
+    <div class="shadow shadow-lg p-3 mb-5 bg-light rounded mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group row mt-3">
+                        <label class="col-form-label col-sm-3 font-weight-bold">Departman Adını Giriniz</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(d => d.Name, new { @class = "form-control", placeholder = "Departman adı" })
+                            @Html.ValidationMessageFor(d => d.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <input type="submit" value="Departmanı ekle" class="btn btn-info col-md-3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@*<div class="form-group">
+        <label class="col-form-label col-md-3">Departman Adını Giriniz</label>
+        <div class="col-md-6">
+            @Html.TextBoxFor(d => d.Name, new { @class = "form-control", placeholder = "Departman adı" })
+            @Html.ValidationMessageFor(d => d.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9">
+            <input type="submit" value="Ekle" class="btn btn-info col-md-3" />
+        </div>
+    </div>*@

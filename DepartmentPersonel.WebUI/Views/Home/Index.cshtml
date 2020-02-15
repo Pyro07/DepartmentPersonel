@@ -1,52 +1,8 @@
-﻿@model List<DepartmentPersonel.Entities.Department>
+﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <table class="table table-striped table-hover text-center">
-                    <thead>
-                        <tr>
-                            <th>Departman Id</th>
-                            <th>Departman Adı</th>
-                            <th>Güncelle</th>
-                            <th>Sil</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.Id</td>
-                                <td>@item.Name</td>
-                                <td>
-                                    <a href="@Url.Action("Edit","Home", new { id = item.Id })" class="btn btn-warning text-white"><i class="fa fa-save"></i> Güncelle</a>
-                                </td>
-                                <td>
-                                    <a href="@Url.Action("Delete", "Home", new { id = item.Id })" class="btn btn-danger text-white"><i class="fas fa-trash"></i> Sil</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-</body>
-</html>
