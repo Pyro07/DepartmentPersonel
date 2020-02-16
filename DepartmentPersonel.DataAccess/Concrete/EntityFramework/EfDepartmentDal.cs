@@ -19,6 +19,11 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
             _context = new DepartmentPersonelContext();
         }
 
+        public int Count()
+        {
+            return _context.Departments.Count();
+        }
+
         public void Delete(int id)
         {
             //_context.Departments.Remove(_context.Departments.FirstOrDefault(x => x.Id == id));

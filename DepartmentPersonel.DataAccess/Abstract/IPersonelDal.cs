@@ -17,5 +17,6 @@ namespace DepartmentPersonel.DataAccess.Abstract
         Personel GetById(int id);
 
         IEnumerable<Personel> GetPersonelWithDepartments();
+        int Count();
     }
 }

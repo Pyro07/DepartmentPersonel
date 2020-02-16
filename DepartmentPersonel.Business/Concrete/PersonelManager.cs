@@ -17,6 +17,11 @@ namespace DepartmentPersonel.Business.Concrete
             _personel = personel;
         }
 
+        public int Count()
+        {
+            return _personel.Count();
+        }
+
         public void Delete(int id)
         {
             _personel.Delete(id);

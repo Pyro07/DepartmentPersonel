@@ -21,6 +21,8 @@ namespace DepartmentPersonel.WebUI.Controllers
         }
         public ActionResult Index()
         {
+            ViewBag.DepartmentsCount = _departmentService.Count();
+            ViewBag.PersonelsCount = _personelService.Count();
             return View();
         }
     }

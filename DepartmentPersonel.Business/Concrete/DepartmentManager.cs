@@ -17,6 +17,12 @@ namespace DepartmentPersonel.Business.Concrete
         {
             _departmentDal = departmentDal;
         }
+
+        public int Count()
+        {
+            return _departmentDal.Count();
+        }
+
         public void Delete(int id)
         {
             _departmentDal.Delete(id);

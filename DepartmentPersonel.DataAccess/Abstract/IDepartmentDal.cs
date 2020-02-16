@@ -15,5 +15,7 @@ namespace DepartmentPersonel.DataAccess.Abstract
         void Save();
         IEnumerable<Department> GetAll();
         Department GetById(int id);
+
+        int Count();
     }
 }

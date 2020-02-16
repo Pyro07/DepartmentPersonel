@@ -17,6 +17,12 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
         {
             _context = new DepartmentPersonelContext();
         }
+
+        public int Count()
+        {
+            return _context.Personels.Count();
+        }
+
         public void Delete(int id)
         {
             Personel personel = _context.Personels.Find(id);

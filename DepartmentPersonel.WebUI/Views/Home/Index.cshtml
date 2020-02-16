@@ -4,5 +4,26 @@
     Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Departman</div>
+                <div class="card-body">
+                    <h5 class="card-title">Kayıtlı bulunan departman sayısı: @ViewBag.DepartmentsCount</h5>
+                    <p class="card-text"> <a href="@Url.Action("Index", "Depatments")" class="text-white">Görmek için tıklayın...</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Personel</div>
+                <div class="card-body">
+                    <h5 class="card-title">Kayıtlı bulunan personel sayısı: @ViewBag.PersonelsCount</h5>
+                    <p class="card-text"><a href="@Url.Action("Index", "Personel")" class="text-white">Görmek için tıklayın...</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
