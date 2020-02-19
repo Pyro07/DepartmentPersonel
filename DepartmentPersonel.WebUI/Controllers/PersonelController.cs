@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace DepartmentPersonel.WebUI.Controllers
 {
+    [RoutePrefix("personeller")]
     public class PersonelController : Controller
     {
         private IPersonelService _personelService;
@@ -18,19 +19,22 @@ namespace DepartmentPersonel.WebUI.Controllers
             _personelService = personelService;
             _departmentService = departmentService;
         }
-        // GET: Personel
+        
+        [Route]
         public ActionResult Index()
         {
             var model = _personelService.GetPersonelWithDepartments();
             return View(model);
         }
 
+        [Route("yeni-personel")]
         public ActionResult Create()
         {
             DepartmentDropdownList();
             return View();
         }
 
+        [Route("yeni-personel")]
         [HttpPost]
         public ActionResult Create(Personel personel)
         {
@@ -51,6 +55,7 @@ namespace DepartmentPersonel.WebUI.Controllers
             return View(personel);
         }
 
+        [Route("personel-duzenle/{id}")]
         public ActionResult Edit(int id)
         {
             DepartmentDropdownList();
@@ -62,6 +67,7 @@ namespace DepartmentPersonel.WebUI.Controllers
             return View(personel);
         }
 
+        [Route("personel-duzenle/{id}")]
         [HttpPost]
         public ActionResult Edit(Personel personel)
         {

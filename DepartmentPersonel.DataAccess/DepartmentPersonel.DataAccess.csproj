@@ -58,10 +58,21 @@
     <Compile Include="Concrete\EntityFramework\EfDepartmentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPersonelDal.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Migrations\202002191952585_InitialCreate.cs" />
+    <Compile Include="Migrations\202002191952585_InitialCreate.designer.cs">
+      <DependentUpon>202002191952585_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002192007071_DBMigration.cs" />
+    <Compile Include="Migrations\202002192007071_DBMigration.designer.cs">
+      <DependentUpon>202002192007071_DBMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002192100037_DBMigration2.cs" />
+    <Compile Include="Migrations\202002192100037_DBMigration2.designer.cs">
+      <DependentUpon>202002192100037_DBMigration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -71,6 +82,17 @@
       <Project>{2F5F722C-0A16-4A2A-BCE7-F3EE5D6F969F}</Project>
       <Name>DepartmentPersonel.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002191952585_InitialCreate.resx">
+      <DependentUpon>202002191952585_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002192007071_DBMigration.resx">
+      <DependentUpon>202002192007071_DBMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002192100037_DBMigration2.resx">
+      <DependentUpon>202002192100037_DBMigration2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

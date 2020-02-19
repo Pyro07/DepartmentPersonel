@@ -23,7 +23,7 @@ namespace DepartmentPersonel.Business.Concrete
             return _departmentDal.Count();
         }
 
-        public void Delete(int id)
+        public void Delete(int? id)
         {
             _departmentDal.Delete(id);
         }
@@ -33,7 +33,7 @@ namespace DepartmentPersonel.Business.Concrete
             return _departmentDal.GetAll();
         }
 
-        public Department GetById(int id)
+        public Department GetById(int? id)
         {
             return _departmentDal.GetById(id);
         }

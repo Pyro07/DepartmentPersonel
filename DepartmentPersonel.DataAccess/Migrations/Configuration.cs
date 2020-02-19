@@ -9,7 +9,8 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "DepartmentPersonel.DataAccess.Concrete.EntityFramework.DepartmentPersonelContext";
         }
 
         protected override void Seed(DepartmentPersonel.DataAccess.Concrete.EntityFramework.DepartmentPersonelContext context)

@@ -10,11 +10,11 @@ namespace DepartmentPersonel.DataAccess.Abstract
     public interface IPersonelDal
     {
         void Insert(Personel entity);
-        void Delete(int id);
+        void Delete(int? id);
         void Update(Personel entity);
         void Save();
         IEnumerable<Personel> GetAll();
-        Personel GetById(int id);
+        Personel GetById(int? id);
 
         IEnumerable<Personel> GetPersonelWithDepartments();
         int Count();

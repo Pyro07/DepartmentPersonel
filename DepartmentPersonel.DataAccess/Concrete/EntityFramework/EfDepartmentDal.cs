@@ -24,7 +24,7 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
             return _context.Departments.Count();
         }
 
-        public void Delete(int id)
+        public void Delete(int? id)
         {
             //_context.Departments.Remove(_context.Departments.FirstOrDefault(x => x.Id == id));
             Department department = _context.Departments.Find(id);
@@ -36,7 +36,7 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
             return _context.Departments.ToList();
         }
 
-        public Department GetById(int id)
+        public Department GetById(int? id)
         {
             return _context.Departments.FirstOrDefault(x => x.Id == id);
         }

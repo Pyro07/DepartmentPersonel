@@ -5,8 +5,8 @@
 
 
 
-    @using (Html.BeginForm("Create", "Personel", FormMethod.Post))
-    {
+@using (Html.BeginForm("Create", "Personel", FormMethod.Post))
+{
     <div class="shadow shadow-lg p-3 mb-5 bg-light rounded mt-4">
         <div class="container">
             <div class="row">
@@ -17,7 +17,13 @@
                             @Html.DropDownListFor(p => p.DepartmentId, new SelectList(ViewBag.PersonelDepartments, "Id", "Name"), "Departman Seçiniz", new { @class = "form-control" })
                             @Html.ValidationMessageFor(p => p.Department, "", new { @class = "text-danger" })
                         </div>
-
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 font-weight-bold">Personel Kimlik Numarası</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(p => p.IdentityNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.IdentityNumber, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-form-label col-md-3 font-weight-bold">Personel Adı</label>
@@ -28,18 +34,19 @@
 
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-md-3 font-weight-bold">Personel Soyadı</label>
+                        <label class="col-form-label col-sm-3 font-weight-bold">Personel Soyadı</label>
                         <div class="col-sm-9">
                             @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
                             @Html.ValidationMessageFor(p => p.LastName, "", new { @class = "text-danger" })
                         </div>
-
                     </div>
-                    @*<div class="form-group row">
-                        <label class="col-form-label col-md-3">Maaş</label>
-                        @Html.TextBoxFor(p => p.Salary, new { @class = "form-control col-md-5" })
-                        @Html.ValidationMessageFor(p=>p.Salary, "", new { @class = "text-danger" })
-                    </div>*@
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3 font-weight-bold">Personel Maaşı</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(p => p.PersonelSalary, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.PersonelSalary, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="offset-sm-3 col-sm-9">
                             <input type="submit" value="Personeli ekle" class="btn btn-info col-sm-3" />
@@ -49,6 +56,6 @@
             </div>
         </div>
     </div>
-    }
-    
+}
+
 

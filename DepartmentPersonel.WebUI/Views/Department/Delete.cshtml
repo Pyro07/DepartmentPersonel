@@ -1,0 +1,30 @@
+﻿@model DepartmentPersonel.Entities.Department
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(d => d.Id)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(d => d.Id)</dd>
+                
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(d => d.Name)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(d => d.Name)</dd>
+            </dl>
+            @using (Html.BeginForm("Delete", "Department", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <a href="@Url.Action("Index","Departments")" class="btn btn-light btn-sm">Departman listesine geri dön</a>
+                        <input type="submit" class="btn btn-danger btn-sm" value="Kaydı sil" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

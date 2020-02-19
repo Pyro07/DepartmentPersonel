@@ -10,10 +10,11 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
 {
     public class DepartmentPersonelContext : DbContext
     {
-        public DepartmentPersonelContext()
+        public DepartmentPersonelContext() : base (nameOrConnectionString: "DepartmentPersonelContext")
         {
-           this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = false;
         }
+
         public DbSet<Department> Departments { get; set; }
         public DbSet<Personel> Personels { get; set; }
     }
