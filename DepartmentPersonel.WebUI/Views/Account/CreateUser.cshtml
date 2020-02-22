@@ -1,0 +1,34 @@
+﻿@model DepartmentPersonel.Entities.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateUser</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/SignInCSS.css" rel="stylesheet" />
+</head>
+<body class="text-center">
+    @using (Html.BeginForm("CreateUser", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+        @Html.TextBoxFor(u => u.UserName, new { @class = "form-control", placeholder = "Kullanıcı adı", autofocus = "autofocus" })
+        @Html.TextBoxFor(u => u.Email, new { @class = "form-control", placeholder = "Email adresi" })
+        @Html.TextBoxFor(u => u.UserPassword, new { @class = "form-control", placeholder = "Parola" })
+        @Html.TextBoxFor(u => u.UserPasswordConfirm, new { @class = "form-control", placeholder = "Parolanızı onaylayın" })
+        <input type="submit" class="btn btn-info btn-lg btn-block mt-3" value="Kayıt ol"/>
+        <p class="mb-3 mt-5 text-muted">© 2020 Burak BAŞESKİOĞLU</p>
+
+    </form>
+    }
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

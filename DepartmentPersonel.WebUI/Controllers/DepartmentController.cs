@@ -7,9 +7,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using DepartmentPersonel.WebUI.Helper;
 
 namespace DepartmentPersonel.WebUI.Controllers
 {
+    [LoginFilter]
     [RoutePrefix("departmanlar")]
     public class DepartmentController : Controller
     {
@@ -21,9 +24,38 @@ namespace DepartmentPersonel.WebUI.Controllers
         }
         
         [Route]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString,int? page)
         {
-            return View(_departmentService.GetAll());
+            ViewBag.SortOrder = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+            var model = from d in _departmentService.GetAll()
+                        select d;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(d => d.Name.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    model = model.OrderByDescending(s => s.Name);
+                    break;
+                default:
+                    model = model.OrderBy(s => s.Name);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+
+            return View(model.ToPagedList(pageNumber, pageSize));
         }
         
         [Route("yeni-departman")]

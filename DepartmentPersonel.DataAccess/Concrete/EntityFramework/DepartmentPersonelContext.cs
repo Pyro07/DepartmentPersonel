@@ -17,5 +17,7 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
 
         public DbSet<Department> Departments { get; set; }
         public DbSet<Personel> Personels { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }

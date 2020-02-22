@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Anasayfa";
     Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
@@ -28,7 +28,7 @@
             <div class="card text-white bg-info mb-3" style="max-width:18rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
-                    <h5 class="card-title">Kayıtlı bulunan kullanıcı sayısı: </h5>
+                    <h5 class="card-title">Kayıtlı bulunan kullanıcı sayısı: @ViewBag.UsersCount </h5>
                     <p class="card-text"><a href="@Url.Action("Index", "Home")" class="text-white">Görmek için tıklayın...</a></p>
                 </div>
             </div>

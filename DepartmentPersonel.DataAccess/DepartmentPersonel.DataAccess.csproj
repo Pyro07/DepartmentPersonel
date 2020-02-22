@@ -54,9 +54,11 @@
     <Compile Include="Abstract\IDepartmentDal.cs" />
     <Compile Include="Abstract\IPersonelDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\DepartmentPersonelContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfDepartmentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPersonelDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Migrations\202002191952585_InitialCreate.cs" />
     <Compile Include="Migrations\202002191952585_InitialCreate.designer.cs">
@@ -69,6 +71,10 @@
     <Compile Include="Migrations\202002192100037_DBMigration2.cs" />
     <Compile Include="Migrations\202002192100037_DBMigration2.designer.cs">
       <DependentUpon>202002192100037_DBMigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002211242458_DBMigration3.cs" />
+    <Compile Include="Migrations\202002211242458_DBMigration3.designer.cs">
+      <DependentUpon>202002211242458_DBMigration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002192100037_DBMigration2.resx">
       <DependentUpon>202002192100037_DBMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002211242458_DBMigration3.resx">
+      <DependentUpon>202002211242458_DBMigration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

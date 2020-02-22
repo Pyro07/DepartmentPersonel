@@ -19,6 +19,8 @@ namespace DepartmentPersonel.Business.DependecyResolver
             Bind<IPersonelService>().To<PersonelManager>().InSingletonScope();
             Bind<IDepartmentDal>().To<EfDepartmentDal>().InSingletonScope();
             Bind<IPersonelDal>().To<EfPersonelDal>().InSingletonScope();
+            Bind<IUserService>().To<UserManager>().InSingletonScope();
+            Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
         }
     }
 }

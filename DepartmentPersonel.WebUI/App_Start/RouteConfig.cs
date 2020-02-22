@@ -15,6 +15,12 @@ namespace DepartmentPersonel.WebUI
             routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
+                name: "Main",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Main", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

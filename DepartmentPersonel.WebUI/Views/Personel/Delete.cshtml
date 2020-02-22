@@ -1,0 +1,38 @@
+﻿@model DepartmentPersonel.Entities.Personel
+@{
+    ViewBag.Title = "Personel Sil";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(p => p.IdentityNumber)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(p => p.IdentityNumber)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(p => p.Name)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(p => p.Name)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(p => p.LastName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(p => p.LastName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(p => p.PersonelSalary)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(p => p.PersonelSalary)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(p => p.Department.Name)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(p => p.Department.Name)</dd>
+            </dl>
+            @using (Html.BeginForm("Delete", "Personel", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken();
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <a href="@Url.Action("Index", "Personel")" class="btn btn-light btn-sm">Personel listesine geri dön</a>
+                        <input type="submit" value="Kaydı sil" class="btn btn-danger btn-sm" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

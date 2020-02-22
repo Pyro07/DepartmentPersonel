@@ -46,8 +46,10 @@
   <ItemGroup>
     <Compile Include="Abstract\IDepartmentService.cs" />
     <Compile Include="Abstract\IPersonelService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\DepartmentManager.cs" />
     <Compile Include="Concrete\PersonelManager.cs" />
+    <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="DependecyResolver\BusinessModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

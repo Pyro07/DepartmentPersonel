@@ -3,11 +3,15 @@ using DepartmentPersonel.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using DepartmentPersonel.WebUI.Helper;
 
 namespace DepartmentPersonel.WebUI.Controllers
 {
+    [LoginFilter]
     [RoutePrefix("personeller")]
     public class PersonelController : Controller
     {
@@ -21,10 +25,53 @@ namespace DepartmentPersonel.WebUI.Controllers
         }
         
         [Route]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
-            var model = _personelService.GetPersonelWithDepartments();
-            return View(model);
+            ViewBag.SortOrder = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.LastNameParm = sortOrder == "lastName" ? "lastName_desc" : "lastName";
+            ViewBag.DepartmentNameParm = sortOrder == "departmentName" ? "departmentName_desc" : "departmentName";
+
+            var model = from personel in _personelService.GetPersonelWithDepartments()
+                        select personel;
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(personel => personel.Name.Contains(searchString) || personel.LastName.Contains(searchString) ||
+                personel.Department.Name.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    model = model.OrderByDescending(personel => personel.Name);
+                    break;
+                case "lastName_desc":
+                    model = model.OrderByDescending(personel => personel.LastName);
+                    break;
+                case "lastName":
+                    model = model.OrderBy(personel => personel.LastName);
+                    break;
+                case "departmentName_desc":
+                    model = model.OrderByDescending(personel => personel.Department.Name);
+                    break;
+                case "departmentName":
+                    model = model.OrderBy(personel => personel.Department.Name);
+                    break;
+                default:
+                    model = model.OrderBy(personel => personel.Name);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(model.ToPagedList(pageNumber, pageSize));
         }
 
         [Route("yeni-personel")]
@@ -88,23 +135,35 @@ namespace DepartmentPersonel.WebUI.Controllers
             return View(personel);
         }
 
-        public ActionResult Delete(int id)
+        [Route("personel-sil/{id}")]
+        public ActionResult Delete(int? id)
         {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Personel personel = _personelService.GetById(id);
             if (personel == null)
             {
-                throw new Exception("Silinecek personel bulunamdı");
+                return HttpNotFound();
             }
+            return View(personel);
+        }
+
+        [Route("personel-sil/{id}")]
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
             try
             {
                 _personelService.Delete(id);
                 _personelService.Save();
-                return RedirectToAction("Index");
             }
             catch (Exception)
             {
-                throw new Exception("Personel silinemedi");
+                return RedirectToAction("Delete", new { id = id });
             }
+            return RedirectToAction("Index");
         }
 
         private void DepartmentDropdownList(/*object selectedDepartment = null*/)
