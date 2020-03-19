@@ -44,15 +44,24 @@
                         @*<li class="nav-item">
                             <a class="nav-link" href="@Url.Action("LogOut", "Account")">Çıkış yap</a>
                         </li>*@
-                        <li class="nav-item dropdown">
+                        @*<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @HttpContext.Current.User.Identity.Name
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">İşlemler</a>
+                                <a class="dropdown-item" href="@Url.Action("UserProfile", "Manage")">İşlemler</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="@Url.Action("LogOut","Account")">Çıkış yap</a>
+                                <a class="dropdown-item" href="@Url.Action("Logout","Account")">Çıkış yap</a>
                             </div>
+                        </li>*@
+                        <li class="nav-item active">
+                            <a class="nav-link">@HttpContext.Current.User.Identity.Name</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("UserProfile", "Manage")">Kullancı işlemleri</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("Logout", "Account")">Çıkış yap</a>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +82,8 @@
     <script src="~/Scripts/umd/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
     <script>
         $(document).ready(function () {

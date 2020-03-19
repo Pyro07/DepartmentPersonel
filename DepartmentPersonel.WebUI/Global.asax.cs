@@ -1,11 +1,7 @@
-using DepartmentPersonel.Business.DependecyResolver;
-using DepartmentPersonel.WebUI.Infrastructure.Ninject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using DepartmentPersonel.Business;
 using System.Web.Mvc;
 using System.Web.Routing;
+
 
 namespace DepartmentPersonel.WebUI
 {
@@ -15,7 +11,9 @@ namespace DepartmentPersonel.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
+            //ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
+
+            UnityConfig.RegisterComponents();
         }
     }
 }

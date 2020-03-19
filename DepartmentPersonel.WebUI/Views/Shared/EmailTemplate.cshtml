@@ -1,0 +1,66 @@
+﻿@model DepartmentPersonel.Entities.ViewModels.SendEmailViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <title></title>
+</head>
+<body style="margin:0;padding:0;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr style="background-color:#eae7dc;">
+            <td style="padding:40px 0 30px 0;">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PHBhdGggc3R5bGU9ImZpbGw6I0ZGNUQ1QSIgZD0iTTI1Niw1MTJDMTE0LjgzOSw1MTIsMCwzOTcuMTYxLDAsMjU2UzExNC44MzksMCwyNTYsMHMyNTYsMTE0LjgzOSwyNTYsMjU2UzM5Ny4xNjEsNTEyLDI1Niw1MTJ6IiBkYXRhLW9yaWdpbmFsPSIjMDBEN0RGIiBjbGFzcz0iIiBkYXRhLW9sZF9jb2xvcj0iIzAwRDdERiI+PC9wYXRoPjxwYXRoIHN0eWxlPSJmaWxsOiNGNTRGNEMiIGQ9Ik01MTIsMjU2QzUxMiwxMTQuODM5LDM5Ny4xNjEsMCwyNTYsMHY1MTJDMzk3LjE2MSw1MTIsNTEyLDM5Ny4xNjEsNTEyLDI1NnoiIGRhdGEtb3JpZ2luYWw9IiMwMEI2QkQiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMEI2QkQiPjwvcGF0aD48cGF0aCBzdHlsZT0iZmlsbDojRkZGRkZGIiBkPSJNMzU2LjE5NiwzMzkuNDk2Yy00MS40NiwwLTcxLjg5Ni0yNy45MTktMTAwLjE5Ni01OC42MzJjLTI4LjI5NCwzMC43MTMtNTguNzMsNTguNjMyLTEwMC4xOTYsNTguNjMyICBjLTQ2LjA0MiwwLTgzLjQ5Ni0zNy40NTQtODMuNDk2LTgzLjQ5NnMzNy40NTQtODMuNDk2LDgzLjQ5Ni04My40OTZjNDEuNDY1LDAsNzEuOTAyLDI3LjkxOSwxMDAuMTk2LDU4LjYzMiAgYzI4LjMtMzAuNzEzLDU4LjczNi01OC42MzIsMTAwLjE5Ni01OC42MzJjNDYuMDQyLDAsODMuNDk2LDM3LjQ1NCw4My40OTYsODMuNDk2UzQwMi4yMzgsMzM5LjQ5NiwzNTYuMTk2LDMzOS40OTZ6IE0yNzguNTE2LDI1NiAgYzI0LjcwNiwyNy4wMjIsNDguODg1LDUwLjA5OCw3Ny42OCw1MC4wOThjMjcuNjI1LDAsNTAuMDk4LTIyLjQ3Myw1MC4wOTgtNTAuMDk4cy0yMi40NzMtNTAuMDk4LTUwLjA5OC01MC4wOTggIEMzMjcuNDAyLDIwNS45MDIsMzAzLjIyMiwyMjguOTc4LDI3OC41MTYsMjU2eiBNMTU1LjgwNCwyMDUuOTAyYy0yNy42MjUsMC01MC4wOTgsMjIuNDczLTUwLjA5OCw1MC4wOTggIHMyMi40NzMsNTAuMDk4LDUwLjA5OCw1MC4wOThjMjguNzk0LDAsNTIuOTc5LTIzLjA3Niw3Ny42ODUtNTAuMDk4QzIwOC43ODMsMjI4Ljk3OCwxODQuNTk4LDIwNS45MDIsMTU1LjgwNCwyMDUuOTAyeiIgZGF0YS1vcmlnaW5hbD0iI0ZGRkZGRiIgY2xhc3M9IiI+PC9wYXRoPjxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGQ9Ik0zNTYuMTk2LDMzOS40OTZjNDYuMDQyLDAsODMuNDk2LTM3LjQ1NCw4My40OTYtODMuNDk2cy0zNy40NTQtODMuNDk2LTgzLjQ5Ni04My40OTYgIGMtNDEuNDYsMC03MS44OTYsMjcuOTE5LTEwMC4xOTYsNTguNjMydjQ5LjcyOEMyODQuMywzMTEuNTc3LDMxNC43MzYsMzM5LjQ5NiwzNTYuMTk2LDMzOS40OTZ6IE0zNTYuMTk2LDIwNS45MDIgIGMyNy42MjUsMCw1MC4wOTgsMjIuNDczLDUwLjA5OCw1MC4wOThzLTIyLjQ3Myw1MC4wOTgtNTAuMDk4LDUwLjA5OGMtMjguNzk0LDAtNTIuOTczLTIzLjA3Ni03Ny42NzktNTAuMDk4ICBDMzAzLjIyMiwyMjguOTc4LDMyNy40MDIsMjA1LjkwMiwzNTYuMTk2LDIwNS45MDJ6IiBkYXRhLW9yaWdpbmFsPSIjRkZEQUFBIiBjbGFzcz0iIiBkYXRhLW9sZF9jb2xvcj0iI0ZGREFBQSI+PC9wYXRoPjwvZz4gPC9zdmc+" width="120" height="120" style="display:block; margin-left: 30px;" align="left" />
+                <h2 style="color: #153643; margin-right: 30px;" align="right">infinityLoop</h2>
+            </td>
+        </tr>
+        <tr style="background-color: #eae7dc;">
+            <td style="padding: 40px 30px 40px 30px; border-top: 1px solid #cccccc">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+                            <b>Merhabalar, @Model.Name @Model.LastName</b>
+                        </td>
+                    </tr>
+                    <tr style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                        <td style="padding: 20px 0 30px 0;">
+                            <p>Aşağıda bulunan linke tıklayarak hesabınızı aktif edebilirsiniz.</p>
+                            <p>Hesabınız aktif etmek için <a href="@Model.ActivationCode">buraya tıklayın</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="background-color:#ee4c50; color: white;">
+            <td style="padding: 30px 30px 30px 30px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td width="75%" style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;">
+                            infinityLoop &copy; 2020 <br />
+                            Giresun Teknoloji Geliştirme Bölgesi Merkez/GİRESUN
+                        </td>
+                        @*<td align="center">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <a href="https://www.twitter.com">
+                                                <img src="images/twitter.svg" width="35" height="35" style="display:block;" border="0" />
+                                            </a>
+                                        </td>
+                                        <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+                                        <td>
+                                            <a href="https://www.twitter.com">
+                                                <img src="images/facebook.svg" width="35" height="35" style="display:block;" border="0" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>*@
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

@@ -1,4 +1,7 @@
 ﻿using DepartmentPersonel.Entities;
+using DepartmentPersonel.Entities.ApplicationModels;
+using DepartmentPersonel.Entities.IdentityModels;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
 {
-    public class DepartmentPersonelContext : DbContext
+    public class DepartmentPersonelContext : IdentityDbContext<ApplicationUser>
     {
         public DepartmentPersonelContext() : base (nameOrConnectionString: "DepartmentPersonelContext")
         {
@@ -17,7 +20,5 @@ namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
 
         public DbSet<Department> Departments { get; set; }
         public DbSet<Personel> Personels { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
     }
 }

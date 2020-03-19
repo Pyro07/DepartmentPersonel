@@ -1,0 +1,87 @@
+﻿@model DepartmentPersonel.Entities.ViewModels.UserProfilePasswordViewModel
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="container mt-3">
+    <div class="shadow shadow-lg p-3 mb-5 bg-light rounded">
+        <h3 class="h3">Üyelik Bilgilerim</h3>
+        @using (Html.BeginForm("UpdateProfile", "Manage", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            if (TempData["ErrorMessage"] != null)
+            {
+                <p class="alert alert-danger">@TempData["ErrorMessage"]</p>
+            }
+            if (TempData["Message"] != null)
+            {
+                <p class="alert alert-success">@TempData["Message"]</p>
+            }
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Adınız</label>
+                        @Html.TextBoxFor(m => m.UserProfileViewModel.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserProfileViewModel.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Soyadınız</label>
+                        @Html.TextBoxFor(m => m.UserProfileViewModel.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserProfileViewModel.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">E-posta adresi</label>
+                        @Html.TextBoxFor(m => m.UserProfileViewModel.Email, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Kullanıcı adınız</label>
+                        @Html.TextBoxFor(m => m.UserProfileViewModel.UserName, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success" value="Bilgilerimi kaydet" style="border-radius:0px !important;" />
+        }
+        <hr />
+        <h3 class="h3">Parola İşlemlerim</h3>
+        @using (Html.BeginForm("ChangePassword", "Manage", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Eski parolanız</label>
+                        @Html.TextBoxFor(m => m.ChangePasswordViewModel.OldPassword, new { @class = "form-control", type = "password" })
+                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.OldPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Yeni parolanız</label>
+                        @Html.TextBoxFor(m => m.ChangePasswordViewModel.NewPassword, new { @class = "form-control", type = "password" })
+                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.NewPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-form-label">Yeni parolanızı onaylayın</label>
+                        @Html.TextBoxFor(m => m.ChangePasswordViewModel.ConfirmNewPassword, new { @class = "form-control", type = "password" })
+                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.ConfirmNewPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-info" value="Parolamı değiştir" style="border-radius:0px !important;" />
+        }
+    </div>
+</div>
+

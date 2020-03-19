@@ -1,5 +1,5 @@
 ﻿using DepartmentPersonel.Business.Abstract;
-using DepartmentPersonel.Entities;
+using DepartmentPersonel.Entities.ApplicationModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +12,7 @@ using DepartmentPersonel.WebUI.Helper;
 
 namespace DepartmentPersonel.WebUI.Controllers
 {
-    [LoginFilter]
+    [Authorize(Roles = "Admin")]
     [RoutePrefix("departmanlar")]
     public class DepartmentController : Controller
     {
@@ -24,7 +24,7 @@ namespace DepartmentPersonel.WebUI.Controllers
         }
         
         [Route]
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString,int? page)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.SortOrder = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";

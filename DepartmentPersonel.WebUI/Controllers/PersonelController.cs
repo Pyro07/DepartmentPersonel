@@ -1,5 +1,5 @@
 ﻿using DepartmentPersonel.Business.Abstract;
-using DepartmentPersonel.Entities;
+using DepartmentPersonel.Entities.ApplicationModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using DepartmentPersonel.WebUI.Helper;
 
 namespace DepartmentPersonel.WebUI.Controllers
 {
-    [LoginFilter]
+    [Authorize(Roles = "Admin")]
     [RoutePrefix("personeller")]
     public class PersonelController : Controller
     {

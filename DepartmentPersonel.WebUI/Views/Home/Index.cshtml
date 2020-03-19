@@ -10,8 +10,8 @@
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">Departman</div>
                 <div class="card-body">
-                    <h5 class="card-title">Kayıtlı bulunan departman sayısı: @ViewBag.DepartmentsCount</h5>
-                    <p class="card-text"> <a href="@Url.Action("Index", "Department")" class="text-white">Görmek için tıklayın...</a></p>
+                    <h5 class="card-title">Kayıtlı bulunan departman sayısı: <a href="@Url.Action("Index", "Department")" class="text-white">@ViewBag.DepartmentsCount</a></h5>
+                    @*<p class="card-text"> </p>*@
                 </div>
             </div>
         </div>
@@ -19,17 +19,17 @@
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
                 <div class="card-header">Personel</div>
                 <div class="card-body">
-                    <h5 class="card-title">Kayıtlı bulunan personel sayısı: @ViewBag.PersonelsCount</h5>
-                    <p class="card-text"><a href="@Url.Action("Index", "Personel")" class="text-white">Görmek için tıklayın...</a></p>
+                    <h5 class="card-title">Kayıtlı bulunan personel sayısı: <a href="@Url.Action("Index", "Personel")" class="text-white">@ViewBag.PersonelsCount</a> </h5>
+                    @*<p class="card-text"></p>*@
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card text-white bg-info mb-3" style="max-width:18rem;">
-                <div class="card-header">Header</div>
+                <div class="card-header">Kullanıcı</div>
                 <div class="card-body">
                     <h5 class="card-title">Kayıtlı bulunan kullanıcı sayısı: @ViewBag.UsersCount </h5>
-                    <p class="card-text"><a href="@Url.Action("Index", "Home")" class="text-white">Görmek için tıklayın...</a></p>
+                    @*<p class="card-text"><a href="@Url.Action("Index", "Home")" class="text-white">Görmek için tıklayın...</a></p>*@
                 </div>
             </div>
         </div>

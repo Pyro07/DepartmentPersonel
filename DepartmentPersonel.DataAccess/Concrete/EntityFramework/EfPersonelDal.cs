@@ -1,12 +1,8 @@
 ﻿using DepartmentPersonel.DataAccess.Abstract;
-using DepartmentPersonel.Entities;
-using System;
+using DepartmentPersonel.Entities.ApplicationModels;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DepartmentPersonel.DataAccess.Concrete.EntityFramework
 {

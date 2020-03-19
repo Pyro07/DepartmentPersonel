@@ -1,4 +1,4 @@
-﻿@model DepartmentPersonel.Entities.Department
+﻿@model DepartmentPersonel.Entities.ApplicationModels.Department
 @{
     ViewBag.Title = "Departman Sil";
     Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
@@ -10,7 +10,7 @@
             <dl class="row">
                 <dt class="col-sm-3">@Html.DisplayNameFor(d => d.Id)</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(d => d.Id)</dd>
-                
+
 
                 <dt class="col-sm-3">@Html.DisplayNameFor(d => d.Name)</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(d => d.Name)</dd>

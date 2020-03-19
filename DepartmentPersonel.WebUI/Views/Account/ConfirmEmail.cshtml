@@ -1,0 +1,26 @@
+﻿<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+@{
+    ViewBag.Title = "E-postayı Onayla";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h3 class="display-4">E-posta onayı</h3>
+        @if (ViewBag.Message != null)
+        {
+            <p class="alert alert-success mt-3 font-weight-bold">@ViewBag.Message</p>
+        }
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <p class="alert alert-danger mt-3 font-weight-bold">@ViewBag.ErrorMessage</p>
+        }
+        <hr class="my-4" />
+        <p>E-posta adresinizi onayladığınız için teşekkür ederiz.</p>
+        <p class="lead">
+             @Html.ActionLink("Giriş yap", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-lg btn-success" })
+        </p>
+    </div>
+</div>

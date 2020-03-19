@@ -1,9 +1,5 @@
-﻿using DepartmentPersonel.Entities;
-using System;
+﻿using DepartmentPersonel.Entities.ApplicationModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DepartmentPersonel.Business.Abstract
 {
